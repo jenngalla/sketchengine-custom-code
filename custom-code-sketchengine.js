@@ -124,3 +124,8 @@ function page4Tour() {
     });
 }
 
+// TEST LAUNCHER
+
+console.log("Tour script loaded");
+page1Tour();
+
