@@ -124,8 +124,28 @@ function page4Tour() {
     });
 }
 
-// TEST LAUNCHER
+// TOUR LAUNCHER
 
 console.log("Tour script loaded");
-page1Tour();
 
+const tourStep = localStorage.getItem('tourStep');
+
+if (!tourStep) {
+  page1Tour();
+}
+
+if (tourStep === 'page2') {
+  page2Tour();
+}
+
+if (tourStep === 'page3') {
+  page3Tour();
+}
+
+if (tourStep === 'page3menu') {
+  concordanceTour();
+}
+
+if (tourStep === 'page4') {
+  page4Tour();
+}
