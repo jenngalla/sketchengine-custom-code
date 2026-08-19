@@ -144,4 +144,33 @@ function startTour() {
     page3Tour();
   }
 
-  if (tourStep === 'page3menu
+  if (tourStep === 'page3menu') {
+    concordanceTour();
+  }
+
+  if (tourStep === 'page4') {
+    page4Tour();
+  }
+}
+
+// Load Driver.js CSS
+const css = document.createElement('link');
+css.rel = 'stylesheet';
+css.href = 'https://cdn.jsdelivr.net/npm/driver.js/dist/driver.css';
+document.head.appendChild(css);
+
+// Load Driver.js Script
+const script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/driver.js/dist/driver.js';
+
+script.onload = () => {
+  console.log('Driver loaded');
+  console.log('window.driver =', window.driver);
+  startTour();
+};
+
+script.onerror = () => {
+  console.error('Failed to load Driver.js');
+};
+
+document.head.appendChild(script);
