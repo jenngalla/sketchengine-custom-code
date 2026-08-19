@@ -165,12 +165,4 @@ script.src = 'https://cdn.jsdelivr.net/npm/driver.js/dist/driver.js';
 
 script.onload = () => {
   console.log('Driver loaded');
-  console.log('window.driver =', window.driver);
-  startTour();
-};
-
-script.onerror = () => {
-  console.error('Failed to load Driver.js');
-};
-
-document.head.appendChild(script);
+  console.log
