@@ -127,6 +127,7 @@ function page4Tour() {
 // TOUR LAUNCHER
 
 function startTour() {
+  function startTour() {
   console.log("Tour script loaded");
   console.log("window.driver =", window.driver);
 
