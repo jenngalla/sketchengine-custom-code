@@ -57,6 +57,7 @@ function page2Tour() {
 // PAGE 3
 
 function page3Tour() {
+ console.log(window.driver);
   driver.js.driver({
     steps: [
       {
