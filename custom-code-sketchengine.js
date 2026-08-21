@@ -6,14 +6,25 @@ console.log("Current URL:", window.location.href);
 // =========================
 
 function page1Tour() {
+  const textEl = [...document.querySelectorAll(".featureName")]
+    .find(el => el.textContent.trim() === "N-grams");
+
+  if (!textEl) return;
+
+  // Get the whole clickable card
+  const card = textEl.closest(".card");
+
   const tour = window.driver.js.driver({
+    allowClose: false,
+    showProgress: false,
     steps: [
       {
-        element: Array.from(document.querySelectorAll('.featureName'))
-          .find(el => el.textContent.trim() === 'N-grams'),
+        element: card,
         popover: {
-          title: 'N-grams',
-          description: 'Click on N-grams to continue.'
+          title: "N-grams",
+          description: "Click on N-grams to continue.",
+          side: "right",
+          align: "center"
         }
       }
     ]
@@ -21,12 +32,11 @@ function page1Tour() {
 
   tour.drive();
 
-  Array.from(document.querySelectorAll('.featureName'))
-    .find(el => el.textContent.trim() === 'N-grams')
-    ?.addEventListener('click', () => {
-      localStorage.setItem('tourStep', 'page2');
-      tour.destroy();
-    });
+  // Continue when the user clicks the card
+  card.addEventListener("click", () => {
+    localStorage.setItem("tourStep", "page2");
+    tour.destroy();
+  }, { once: true });
 }
 
 // =========================
