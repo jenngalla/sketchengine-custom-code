@@ -1,4 +1,5 @@
-<!-- Tippy.js libraries -->
+V2 TIPPY
+  <!-- Tippy.js libraries -->
 <script src="https://unpkg.com/@@2
 pkg.com/tippy.js@6"></script>
 
